@@ -53,4 +53,24 @@ struct TextObject : public Object
     int Check_Digit();
     string Change_Score();
 };
+
+struct Item : public Object
+{
+    void Move(SDL_Rect player)
+    {
+        rect.y +=10;
+        if (Check_Collision(rect,player) == true)
+        {
+            rect.y = -rand()%SCREEN_HEIGHT;
+            rect.x = rand()%SCREEN_WIDTH;
+            if (SHOOTER_HEALTH<5)SHOOTER_HEALTH++;
+        }
+        if (rect.y > SCREEN_HEIGHT)
+        {
+            SDL_Delay(1000);
+            rect.y = -rand()%SCREEN_HEIGHT;
+            rect.x = rand()%SCREEN_WIDTH;
+        }
+    }
+};
 #endif // OBJECT_H_INCLUDED
