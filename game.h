@@ -10,6 +10,13 @@ void Game_Running()
 {
     SDL_Rect shooter_rect = {SCREEN_WIDTH/2, SCREEN_HEIGHT - SHOOTER_HEIGHT, SHOOTER_WIDTH, SHOOTER_HEIGHT};
     shooter.Set_Rect(shooter_rect);
+    Item hp_plus;
+    SDL_Rect hp_plus_rect;
+    hp_plus_rect.y = -rand()%SCREEN_HEIGHT;
+    hp_plus_rect.x = rand()%SCREEN_WIDTH;
+    hp_plus_rect.w = 50;
+    hp_plus_rect.h = 50;
+    hp_plus.Set_Rect(hp_plus_rect);
 
     TTF_Font* font = TTF_OpenFont("Roboto-Regular.ttf", 25);
     text.Inf = "Score : 00";
@@ -92,6 +99,9 @@ void Game_Running()
         }
 
         Hp_Bar("hp.png");
+        hp_plus.Move(shooter_rect);
+        LoadImage("item.png", renderer, &hp_plus_rect);
+        hp_plus_rect = hp_plus.Get_Rect();
         SDL_Rect scoring_text_rect;
         scoring_text_rect.x = SCREEN_WIDTH/2 - text.Inf.length()/2;
         scoring_text_rect.y = 0;
