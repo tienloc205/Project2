@@ -61,15 +61,15 @@ struct Item : public Object
         rect.y +=10;
         if (Check_Collision(rect,player) == true)
         {
-            rect.y = -rand()%SCREEN_HEIGHT;
-            rect.x = rand()%SCREEN_WIDTH;
+            rect.y = -(300+rand()%SCREEN_HEIGHT);
+            rect.x = 300+rand()%SCREEN_WIDTH;
             if (SHOOTER_HEALTH<5)SHOOTER_HEALTH++;
         }
         if (rect.y > SCREEN_HEIGHT)
         {
             SDL_Delay(1000);
-            rect.y = -rand()%SCREEN_HEIGHT;
-            rect.x = rand()%SCREEN_WIDTH;
+            rect.y = -(300+rand()%SCREEN_HEIGHT);
+            rect.x = 300+rand()%SCREEN_WIDTH;
         }
     }
 };
