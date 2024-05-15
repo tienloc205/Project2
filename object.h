@@ -67,9 +67,8 @@ struct Item : public Object
         }
         if (rect.y > SCREEN_HEIGHT)
         {
-            SDL_Delay(1000);
-            rect.y = -(500+rand()%SCREEN_HEIGHT);
-            rect.x = 500+rand()%SCREEN_WIDTH;
+            rect.y = -(400+rand()%SCREEN_HEIGHT);
+            rect.x = 400+rand()%SCREEN_WIDTH;
         }
     }
 };
