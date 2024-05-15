@@ -61,8 +61,8 @@ struct Item : public Object
         rect.y +=10;
         if (Check_Collision(rect,player) == true)
         {
-            rect.y = -(500+rand()%SCREEN_HEIGHT);
-            rect.x = 500+rand()%SCREEN_WIDTH;
+            rect.y = -(400+rand()%SCREEN_HEIGHT);
+            rect.x = 400+rand()%SCREEN_WIDTH;
             if (SHOOTER_HEALTH<5)SHOOTER_HEALTH++;
         }
         if (rect.y > SCREEN_HEIGHT)
