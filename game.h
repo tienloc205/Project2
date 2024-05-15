@@ -12,8 +12,8 @@ void Game_Running()
     shooter.Set_Rect(shooter_rect);
     Item hp_plus;
     SDL_Rect hp_plus_rect;
-    hp_plus_rect.y = -(300+rand()%SCREEN_HEIGHT);
-    hp_plus_rect.x = 300+rand()%SCREEN_WIDTH;
+    hp_plus_rect.y = -(500+rand()%SCREEN_HEIGHT);
+    hp_plus_rect.x = 500+rand()%SCREEN_WIDTH;
     hp_plus_rect.w = 50;
     hp_plus_rect.h = 50;
     hp_plus.Set_Rect(hp_plus_rect);
